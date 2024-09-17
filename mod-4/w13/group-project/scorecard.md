@@ -19,3 +19,5 @@ Cohort (hover over this box for proper format)"
 7. Click "Share" in the top right corner, then choose "Copy link."
 8. Send the link to your instructors/JIA(s).
 9. Go to the "How to Use" tab to see how the scorecards work.
+
+![database schema](db-schema.png)
