@@ -54,6 +54,8 @@ app.get('/musicians', async (req, res, next) => {
         // // add offset key-value to query
         // Use the spread operator to add any key/value pairs that exist in the
         // pagination object to the query.
+        // offset: pagination.offset,
+        // limit: pagination.limit
         ...pagination
 
     });
@@ -152,6 +154,7 @@ app.get('/instruments', createPaginationObjectMiddleware({ defaultSize: 4 }), as
 
         // Use the spread operator to add any key/value pairs that exist in the
         // pagination object to the query.
+
         ...req.pagination
 
     });
