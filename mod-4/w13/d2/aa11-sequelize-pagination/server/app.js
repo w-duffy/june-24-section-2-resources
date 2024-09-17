@@ -84,7 +84,7 @@ app.get('/bands', async (req, res, next) => {
         pagination.limit = size;
         pagination.offset = size * (page - 1);
     }
-    //!!END
+
 
     // Query for all bands
     // Include attributes for `id` and `name`
@@ -97,15 +97,14 @@ app.get('/bands', async (req, res, next) => {
             model: Musician,
             attributes: ['id', 'firstName', 'lastName']
         }],
-        //!!ADD
+
         // // add limit key-value to query
         // // add offset key-value to query
-        //!!END_ADD
-        //!!START
+
         // Use the spread operator to add any key/value pairs that exist in the
         // pagination object to the query.
         ...pagination
-        //!!END
+
     });
 
     res.json(bands)
@@ -113,21 +112,20 @@ app.get('/bands', async (req, res, next) => {
 
 
 // BONUS: Pagination with instruments
-//!!ADD
+
 // app.get('/instruments', async (req, res, next) => {
-//!!END_ADD
-//!!START SILENT
+
+
 // Utilize the createPaginationObjectMiddleware to create a middleware function
 // with a defaultSize of 4 and standard defaultPage of 1.
 // Use the req.pagination created by this middleware in the query instead of
 // having to construct pagination objects within the route handler.
 app.get('/instruments', createPaginationObjectMiddleware({ defaultSize: 4 }), async (req, res, next) => {
-//!!END
-    //!!ADD
+
     // // Parse the query params, set default values, and create appropriate
     // // offset and limit values if necessary.
     // // Your code here
-    //!!END_ADD
+
 
     // Query for all instruments
     // Include attributes for `id` and `type`
@@ -148,15 +146,14 @@ app.get('/instruments', createPaginationObjectMiddleware({ defaultSize: 4 }), as
                 attributes: ['id', 'name']
             }]
         }],
-        //!!ADD
+
         // // add limit key-value to query
         // // add offset key-value to query
-        //!!END_ADD
-        //!!START
+
         // Use the spread operator to add any key/value pairs that exist in the
         // pagination object to the query.
         ...req.pagination
-        //!!END
+
     });
 
     res.json(instruments)
