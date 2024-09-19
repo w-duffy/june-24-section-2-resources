@@ -66,11 +66,11 @@ console.log('Verified Payload:', verifiedPayload);
 
 // Your code here
 
-setTimeout(() => {
-    try {
-        console.log(jwt.decode(token));
-        // payload = jwt.verify(token, process.env.SECRET_KEY);
-    } catch (err) {
-        console.log(err);
-    }
-}, 1001);
+// setTimeout(() => {
+//     try {
+//         console.log(jwt.decode(token));
+//         // payload = jwt.verify(token, process.env.SECRET_KEY);
+//     } catch (err) {
+//         console.log(err);
+//     }
+// }, 1001);
