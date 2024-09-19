@@ -23,7 +23,7 @@
   - Working with Render.com
   - PostgrSQL: `psql` CLI
 
-- Distribute Test Specs
+- Distribute Postman Test Collections
 - Cover how to use Postman, and how to apply the results to your scorecard.
 
 - GOAL: Deploy auth me to Render.com by end of day
