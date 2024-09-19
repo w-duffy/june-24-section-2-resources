@@ -7,21 +7,31 @@
 - Discuss the DB Schema and API Docs
 - Begin Auth Me
 - Git Branching Demo
+- Kanban Board
 
 ## Thursday
 
+- PA and How it Relates to the M4 Project
 - Morning lecture on app security
-- Continue working on auth me
+- JWT Practices
+- Continue working on Auth Me
+- Sequelize Scopes EoD
 
 ## Friday
 
 - Demo deployment in the morning
-- Deploy auth me by end of day to Render.com
+  - Working with Render.com
+  - PostgrSQL: `psql` CLI
+
+- Distribute Test Specs
+- Cover how to use Postman, and how to apply the results to your scorecard.
+
+- GOAL: Deploy auth me to Render.com by end of day
 
 ## Next Week
 
-- Cover how to use Postman, and how to apply the results to your scorecard.
-- Work on projects all next week until you're passing.
+- (Recap) How to use Postman, and how to apply the results to your scorecard.
+- Work on projects all week until you're passing.
 
 ## Strategy
 
