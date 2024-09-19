@@ -26,6 +26,8 @@ don't even support CORS, so CSRF Tokens help ensure our site is still secure.
 
 ## JWT - JSON Web Tokens
 
+https://jwt.io/
+
 A way to send information and verify it's integrity. JWTs have three parts, the
 header, the payload, and the signature. A secret key is also required for a JWT
 to work properly.

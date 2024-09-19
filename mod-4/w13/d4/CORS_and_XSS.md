@@ -1,5 +1,7 @@
 ## Cross-Origin Resource Sharing (CORS)
 
+https://cheatsheetseries.owasp.org/index.html
+
 ### What is CORS?
 
 CORS is a security feature implemented by browsers to prevent malicious websites from making unauthorized requests to different domains. It is a mechanism that allows a web page to request resources from a different domain, outside the domain from which the first resource was served.
