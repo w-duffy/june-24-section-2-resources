@@ -35,9 +35,11 @@ This should be something like: https://my-render-project.onrender.com/api
 <br />
 <br />
 
-## Basic Collection
+## Basic Collection ⭐
 
 The basic collection is the most straight forward way to test your endpoints.  You should use this collection for most of your testing until you're further along in the project.
+
+Please note: the basic collection lines up with the scorecard.  This allows you to work through the scorecard in the same order as this Postman collection.
 ![basic collection](image-3.png)
 
 <br />
