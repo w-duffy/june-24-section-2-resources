@@ -2,7 +2,7 @@
 
 This guide will walk you through importing the collections and setting the environment variables so that you can test your API endpoints with Postman.
 
-Please note the green circles and checkmarks in the screenshots are highlighting important fields that you use when working with Postman.
+Please note the green circles and checkmarks in the screenshots are highlighting important fields that you'll use when working with Postman.
 
 ## Import the Collections
 
