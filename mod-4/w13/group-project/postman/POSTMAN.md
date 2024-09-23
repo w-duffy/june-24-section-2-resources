@@ -6,7 +6,9 @@ Please note the green circles and checkmarks in the screenshots are highlighting
 
 ## Import the Collections
 
-Import the test collections.  There is a basic collection and comphrehensive collection.  You can find them in our Discord or in this repo in the "airbnb" folder, and then "postman-tests".
+Begin by importing the test collections.
+
+There is a basic collection and comphrehensive collection.  You can find them in our Discord or in this repo in the "airbnb" folder, and then "postman-tests".
 
 You can drag and drop the json files, or copy and paste the content into the text box that saus "Paste cURL...".
 
