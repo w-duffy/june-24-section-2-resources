@@ -36,8 +36,8 @@ describe("\nGet all Spots owned by the Current User", function () {
         .set("X-XSRF-TOKEN", xsrfToken2)
         .expect(401)
         .end(function (err, res) {
-if (err) return done(err);
-done();
+          if (err) return done(err);
+          done();
         });
     });
   });

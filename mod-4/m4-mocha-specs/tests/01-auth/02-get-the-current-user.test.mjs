@@ -8,7 +8,6 @@ import {
 
 describe("\nGet the Current User", function () {
   console.log("\x1b[32m%s\x1b[0m", "\nWelcome to the test suite!", "👋");
-  console.log("\x1b[34m%s\x1b[0m", "\nThis is currently a work in progress!  We're working out some kinks so use Postman for your official testing.", "🧪");
   console.log("\x1b[31m%s\x1b[0m", "\nPlease provide any feedback regarding bugs!", "🐛");
   console.log("\x1b[32m%s\x1b[0m", "\nRemember to wake up Render before running `npm test`", "🌟");
   let agent, newAgent, xsrfToken, xsrfToken2, agentDetails;

@@ -1,6 +1,6 @@
 /*
 
-REMEMBER: Wake up Render before running `npm test`
+REMEMBER: Wake up Render before running `npm test`.
 
 Replace the base url with your Render API url.
 

@@ -30,7 +30,7 @@ describe("\nLog In a User", function () {
           done();
         });
     });
-  }); 
+  });
 
   describe("Response", function () {
     it("Status Code - 200", function (done) {
@@ -44,7 +44,7 @@ describe("\nLog In a User", function () {
           if (err) return done(err);
           done();
         });
-    }); 
+    });
 
     it("Body Matches API Docs", function (done) {
       agent
@@ -52,7 +52,6 @@ describe("\nLog In a User", function () {
         .send({ credential: agentDetails.email, password: "secret password" })
         .set("Accept", "application/json")
         .set("X-XSRF-TOKEN", xsrfToken)
-
         .expect((response) => {
           if (!("user" in response.body))
             throw new Error("Missing key in response");
