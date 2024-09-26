@@ -11,7 +11,7 @@ This repo contains a test suite for the M4 project.  It is meant to streamline a
 
 ## Running the Tests
 
-To get the test working, ensure you've configuired the following have the following:
+To get the tests working, ensure you've configuired the following:
 
 - Update the base url to point to your live site on Render or your local server.
 - Ensure your server is running, or your live site is up and running.
