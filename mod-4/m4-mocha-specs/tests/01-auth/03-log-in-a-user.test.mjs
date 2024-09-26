@@ -139,7 +139,7 @@ describe("\nLog In a User", function () {
         .send({ credential: "", password: "" })
         .set("Accept", "application/json")
         .set("X-XSRF-TOKEN", xsrfToken)
-        .expect(401)
+        .expect(400)
         .end(function (err, res) {
           if (err) return done(err);
           expect(err).to.not.exist;
