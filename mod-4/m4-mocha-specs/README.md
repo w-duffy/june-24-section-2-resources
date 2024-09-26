@@ -1,17 +1,20 @@
-# M4 Testing Automations
+# M4 Mocha Tests 🚀
 
 This repo contains a test suite for the M4 project.  It is meant to streamline assessing your project and act as an alternative to the Comprehensive Test Collection in Postman.
 
-## Setup and Usage
-It's fairly straightforward directions to get started:
+## Quick Start
 
-- Clone this repo and cd into the directory.
+- Clone this repo and cd into this directory.
 - Run: `npm install`.
 - Update the base url in [`test/utils/constants`](./tests/utils/constants.mjs) ⭐
 - Run: `npm test`.
 
-## Testing
+## Running the Tests
 
-You can point the base url at your live site on Render or your local server.  [`test/utils/constants`](./tests/utils/constants.mjs) is where you will change the base url to point to your Render API url.
+To get the test working, ensure you've configuired the following have the following:
 
-The test results will map 1-to-1 with your Scorecard.
+- Update the base url to point to your live site on Render or your local server.
+- Ensure your server is running, or your live site is up and running.
+- [`test/utils/constants`](./tests/utils/constants.mjs) is the only place you'll need to make a change.
+
+Use `npm test` to run all of the tests.  The test results will map 1-to-1 with your Scorecard.
