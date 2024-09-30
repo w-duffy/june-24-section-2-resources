@@ -27,7 +27,7 @@ describe("\nDelete a Review Image", function () {
     xsrfToken4;
 
   before(async function () {
-    this.timeout(15000);
+    this.timeout(10000);
     let agentArr = createManyAgents(apiBaseUrl, 3);
     [agent, agent2, agent3] = agentArr;
 
