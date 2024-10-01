@@ -49,6 +49,16 @@ function Layout() {
   );
 }
 
+// // Faking a network request ("fetching from the server")
+// Just for demonstration
+// async function getMoviesFromOhio(){
+//   let data = new Promise(res =>{
+//     setTimeout(() => {
+//       res(movies)
+//     }, 250)
+//   })
+//   return data
+// }
 
 const router = createBrowserRouter([
   {
@@ -64,6 +74,9 @@ const router = createBrowserRouter([
       },
       {
         path: 'movies',
+        // Docs on line 78: https://reactrouter.com/en/main/hooks/use-loader-data
+        // https://youtu.be/95B8mnhzoCM?t=99
+        // loader: async () => await getMoviesFromOhio(),
         element: <Movies movies={movies} another={{object: "cool"}} hello="world"  />,
         children: [
           {

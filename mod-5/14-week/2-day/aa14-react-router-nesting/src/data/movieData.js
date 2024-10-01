@@ -1,6 +1,4 @@
-export async function getMovies(){
-  return new Promise(res => "hi")
-}
+
 export const movies = [
   {
     id: 1,

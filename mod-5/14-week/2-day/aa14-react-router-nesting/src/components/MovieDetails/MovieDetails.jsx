@@ -1,5 +1,4 @@
-//!!START SILENT
-import { useParams } from 'react-router-dom';
+import { useParams } from "react-router-dom";
 
 function MovieDetails(props) {
   const { movieId } = useParams();
@@ -7,11 +6,9 @@ function MovieDetails(props) {
   const movieChoice = props.movies.find((movie) => movie.id === +movieId);
 
   return (
-    <div className='comp purple'>
-
+    <div className="comp purple">
       <h1>{movieChoice.title}</h1>
       <p>{movieChoice.description}</p>
-
     </div>
   );
 }
