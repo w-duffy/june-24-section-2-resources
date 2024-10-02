@@ -1,37 +1,35 @@
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from "react";
 
 const ServerData = () => {
-    const [serverData, setServerData] = useState([]);
+  const [serverData, setServerData] = useState();
 
-    useEffect(() => {
-        const fetchFortnite = async () => {
-            const res = await fetch('https://fortnite-api.com/v2/news');
-            const { data } = await res.json();
 
-            setServerData(data.br.motds);
-        };
 
-        const fetchTimeout = setTimeout(() => fetchFortnite(), 2000);
+  useEffect(() => {
+    const fetchFortnite = async () => {
+      const data = await fetch("https://fortnite-api.com/v2/news");
+      const response = await data.json();
+      console.log(response);
+      const parsedData = response.data.stw.messages;
+      console.log(parsedData);
+      setServerData(parsedData);
+    };
+    fetchFortnite();
+  }, []);
 
-        return () => clearTimeout(fetchTimeout);
-    }, []);
+  if (!serverData) return <h1>No Data To Display</h1>;
 
-    // if (!serverData.length)
-    //     return <h1 className="serverContainer">{'Loading...'}</h1>;
-
-    return (
-        <main>
-            {serverData.map(({ id, title, body, image }) => {
-                return (
-                    <div className="serverContainer" key={id}>
-                        <h1>{title}</h1>
-                        <h2>{body}</h2>
-                        <img src={image} alt={title} />
-                    </div>
-                );
-            })}
-        </main>
-    );
+  return (
+    <div>
+      {serverData.map((data) => (
+        <div className="serverContainer" key={data.id}>
+          <h1 className="title">{data.title}</h1>
+          <h2 className="body">{data.body}</h2>
+          <img className="img" src={data.image} alt={data.title} />
+        </div>
+      ))}
+    </div>
+  );
 };
 
 export default ServerData;

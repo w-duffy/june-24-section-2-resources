@@ -23,7 +23,7 @@ describe("\nEdit a Review", function () {
     xsrfToken4;
 
   before(async function () {
-    this.timeout(15000);
+    this.timeout(10000);
     let agentArr = createManyAgents(apiBaseUrl, 3);
     [agent, agent2, agent3] = agentArr;
 
@@ -57,7 +57,7 @@ describe("\nEdit a Review", function () {
           expect(err).to.not.exist;
           done();
         });
-    }); 
+    });
 
     it("Authentication", function (done) {
       const updateData = {
@@ -92,8 +92,8 @@ describe("\nEdit a Review", function () {
           if (err) return done(err);
           done();
         });
-    }); 
-  }); 
+    });
+  });
 
   describe("Response", function () {
     it("Status Code - 200", function (done) {
@@ -112,7 +112,7 @@ describe("\nEdit a Review", function () {
           expect(err).to.not.exist;
           done();
         });
-    }); 
+    });
 
     it("Body Matches API Docs", function (done) {
       const updateData = {
@@ -141,8 +141,8 @@ describe("\nEdit a Review", function () {
           expect(res.body.stars).to.equal(updateData.stars);
           done();
         });
-    }); 
-  }); 
+    });
+  });
 
   describe("Error Response: Body validation errors", function () {
     it("Status Code - 400", function (done) {
@@ -161,7 +161,7 @@ describe("\nEdit a Review", function () {
           if (err) return done(err);
           done();
         });
-    }); 
+    });
 
     it("Body Matches API Docs", function (done) {
       const invalidData = {
@@ -180,8 +180,8 @@ describe("\nEdit a Review", function () {
           expect(res.body.errors).to.include.keys("review", "stars");
           done();
         });
-    }); 
-  }); 
+    });
+  });
 
   describe("Error response: Couldn't find a Review with the specified id", function () {
     it("Status Code - 404", function (done) {
@@ -200,7 +200,7 @@ describe("\nEdit a Review", function () {
           if (err) return done(err);
           return done();
         });
-    }); 
+    });
 
     it("Body Matches API Docs", function (done) {
       const validData = {
@@ -222,5 +222,5 @@ describe("\nEdit a Review", function () {
           done();
         });
     });
-  }); 
-}); 
+  });
+});
