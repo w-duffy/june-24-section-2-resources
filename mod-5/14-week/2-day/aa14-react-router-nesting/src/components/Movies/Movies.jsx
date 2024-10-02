@@ -1,7 +1,8 @@
 import { Outlet, useLoaderData } from "react-router-dom";
 import MovieNavBar from "./MovieNavBar";
 
-function Movies({ another, hello }) {
+function Movies({ another }) {
+  
 let data = useLoaderData()
 
   // console.log("Here's that other prop: ", hello);
