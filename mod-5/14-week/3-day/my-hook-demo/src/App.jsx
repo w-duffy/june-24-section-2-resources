@@ -12,8 +12,6 @@ function App() {
     console.log("did I render");
 
     // spots.allSpots = [1, 2, 3]; // think of this as fetching your spots
-    
-
   }, [count]);
 
   // if (spots.nums === undefined) return null;
