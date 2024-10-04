@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { useHoroscopeContext } from '../context/HoroscopeContext';
+import { useHoro } from '../context/HoroscopeContext';
 
 export default function Match() {
-    const { sign } = useHoroscopeContext();
+    const { sign } = useHoro();
     const [match, setMatch] = useState(false);
 
     console.log(sign);

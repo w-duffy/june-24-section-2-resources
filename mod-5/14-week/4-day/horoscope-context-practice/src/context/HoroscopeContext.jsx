@@ -3,17 +3,17 @@ import horoscopesObj from '../data/horoscopes';
 
 export const HoroscopeContext = createContext();
 
-const HoroscopeProvider = props => {
+export const useHoro = () => useContext(HoroscopeContext)
+const HoroscopeProvider = ({children}) => {
   const [currentSign, setCurrentSign] = useState('Leo');
   const sign = horoscopesObj[currentSign];
 
   return (
     <HoroscopeContext.Provider value={{ sign, setCurrentSign }}>
-      {props.children}
+      {children}
     </HoroscopeContext.Provider>
   );
 };
 
-export const useHoroscopeContext = () => useContext(HoroscopeContext)
 
 export default HoroscopeProvider;

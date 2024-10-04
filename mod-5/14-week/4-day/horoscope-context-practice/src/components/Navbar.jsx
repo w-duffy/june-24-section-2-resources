@@ -1,8 +1,8 @@
 import horoscopesObj from '../data/horoscopes';
-import { useHoroscopeContext } from '../context/HoroscopeContext';
+import { useHoro } from '../context/HoroscopeContext';
 
 const Navbar = () => {
-    const { setCurrentSign } = useHoroscopeContext();
+    const { setCurrentSign } = useHoro();
     const horoscopes = Object.keys(horoscopesObj);
 
     return (
