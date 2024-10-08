@@ -1,4 +1,5 @@
 import { Component } from 'react';
+// let instance = new ClassComponent()
 
 class ClassComponent extends Component {
     constructor(props) {
@@ -19,7 +20,7 @@ class ClassComponent extends Component {
                     seconds: prevState.seconds + 1,
                 };
             });
-        }, 1000);
+        }, 5000);
     }
 
     componentDidUpdate(prevProps, prevState) {

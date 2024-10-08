@@ -16,7 +16,6 @@ export default function Kahoot() {
 
         getKahootImages();
 
-        // setTimeout(getKahootImages, 5000); //? What redux is for!
     }, []);
 
     return (

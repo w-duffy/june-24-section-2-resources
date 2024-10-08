@@ -199,7 +199,7 @@ const CatComponent = () => {
 
     return (
         <div>
-            <button onClick={() => dispatch(addCat('Tenten'))}>
+            <button onClick={() => dispatch({ type: 'ADD_CAT', payload: 'Tenten' })}>
                 Add a cat named Tenten!
             </button>
             <button onClick={() => dispatch(addCat('Kiki'))}>

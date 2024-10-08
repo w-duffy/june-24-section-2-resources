@@ -9,21 +9,23 @@ export default function FunctionalComponent() {
     useEffect(() => {
         const timer = setInterval(() => {
             setSeconds((prevSec) => prevSec + 1);
-        }, 1000);
+        }, 5000);
 
         console.log('useEffect just ran :)');
 
         return () => {
-            console.log('UseEffect goes bye bye');
+            console.log('UseEffect unmounts');
             clearInterval(timer);
         };
-    }, []);
+    },[]);
+    
+    console.log('2: I just ran again, maybe even re-rendered!');
 
-    useEffect(() => {
-        if (seconds >= 10) {
-            setTen(true);
-        }
-    }, [seconds]);
+    // useEffect(() => {
+    //     if (seconds >= 10) {
+    //         setTen(true);
+    //     }
+    // }, [seconds]);
 
     return (
         <div>
