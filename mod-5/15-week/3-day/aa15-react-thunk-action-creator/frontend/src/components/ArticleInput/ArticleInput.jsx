@@ -1,25 +1,34 @@
 import { useState } from 'react';
 import { nanoid } from 'nanoid';
 import { useDispatch } from 'react-redux';
-import { addArticle } from '../../store/articleReducer';
+import { useNavigate } from 'react-router-dom';
+import { addArticleThunk } from '../../store/articleReducer';
 import './ArticleInput.css';
 
 const ArticleInput = () => {
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
   const [imageUrl, setImageUrl] = useState('');
+  let navigate = useNavigate()
 
   const dispatch = useDispatch();
+console.log("im in the article input")
 
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const newArticle = {
-      id: nanoid(),
+      // id: nanoid(),
       title,
       body,
       imageUrl
     };
-    dispatch(addArticle(newArticle));
+    console.log("in handle submit", newArticle)
+    let data = await dispatch(addArticleThunk(newArticle));
+    console.log("DATA: ", data)
+    // if(data.errors) return setErrors(data.errors)
+      // DATA:  {id: 11, title: 'test', body: 'test', imageUrl: 'test.png'}
+    // navigate(`/articles/${data.id}`)
     reset();
   };
 
@@ -28,6 +37,8 @@ const ArticleInput = () => {
     setImageUrl('');
     setBody('');
   };
+
+
 
   return (
     <div className='inputBox'>

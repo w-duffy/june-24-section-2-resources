@@ -7,17 +7,17 @@ const ArticleList = () => {
   const dispatch = useDispatch();
   const articles = useSelector(state=>state.articleState.entries);
   
-  console.log("Step 1 Article List Component first Renders")
+  // console.log("Step 1 Article List Component first Renders")
 
   useEffect(() => {
-    console.log("Step 2 component has mounted; useEffect runs")
+    // console.log("Step 2 component has mounted; useEffect runs")
     dispatch(fetchArticles());
   }, [dispatch]);
   
   
   if(articles.length === 0) return null
   
-  console.log("Step 8 -- FINAL STEP: BACK IN THE COMPONENT; useSelector triggers rerender with latest state")
+  // console.log("Step 8 -- FINAL STEP: BACK IN THE COMPONENT; useSelector triggers rerender with latest state")
   return (
     <div>
       <h1>Article List</h1>

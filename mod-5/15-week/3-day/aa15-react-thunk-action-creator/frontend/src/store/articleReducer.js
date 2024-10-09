@@ -31,11 +31,11 @@ export const addArticle = (payload) => {
 //! --------------------------------------------------------------------
 
 export const fetchArticles = () => async dispatch => {
-  console.log("Step 3 in Thunk")
+  // console.log("Step 3 in Thunk")
   const response = await fetch('/api/articles');
   const articles = await response.json();
 
-  console.log("Step 6 ~~BACK IN THUNK~~", articles)
+  // console.log("Step 6 ~~BACK IN THUNK~~", articles)
   dispatch(loadArticles(articles));
   // {type: , payload}
   // dispatch({type: LOAD_ARTICLES,  articles});
@@ -45,6 +45,7 @@ export const fetchArticles = () => async dispatch => {
 
 
 export const addArticleThunk = (articleFormData) => async (dispatch) => {
+  console.log("in add article thunk\n\n", articleFormData)
   const res = await fetch("/api/articles", {
     method: "POST",
     headers: {
@@ -55,10 +56,13 @@ export const addArticleThunk = (articleFormData) => async (dispatch) => {
 
   if (res.ok) {
     const newArticle = await res.json();
-    dispatch(addArticle([newArticle]));
-    return null;
+    console.log("in add article thunk after res json", newArticle)
+    dispatch(addArticle(newArticle));
+    // return newArticle;
+    return null
   } else {
     const errors = await res.json();
+    console.log("in thunk error", errors)
     return errors;
   }
 };
@@ -69,8 +73,7 @@ const articleReducer = (state = initialState, action) => {
   switch (action.type) {
     case LOAD_ARTICLES:
       console.log("STEP 7 in reducer")
-      // console.log("State", state)
-      // console.log("Action", action)
+
       return { ...state, entries: [...action.articles] };
     case ADD_ARTICLE:
       return { ...state, entries: [...state.entries, action.payload] }; 

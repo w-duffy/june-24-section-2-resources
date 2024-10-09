@@ -5,9 +5,9 @@ const { Article } = require('../../db/models');
 const { validateCreate } = require('../../validations/articles');
 
 router.get('/', asyncHandler(async (_req, res) => {
-  console.log("\nStep 4 in API endpoint\n")
+  // console.log("\nStep 4 in API endpoint\n")
   const articles = await Article.findAll();
-  console.log("Step 5: see what you're sending as a reponse\n", articles)
+  // console.log("Step 5: see what you're sending as a reponse\n", articles)
   res.json(articles);
 }));
 
