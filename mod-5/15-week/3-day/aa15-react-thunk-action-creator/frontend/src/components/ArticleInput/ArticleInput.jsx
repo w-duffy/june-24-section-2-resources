@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { nanoid } from 'nanoid';
+// import { nanoid } from 'nanoid';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import { addArticleThunk } from '../../store/articleReducer';
 import './ArticleInput.css';
 
@@ -9,7 +9,7 @@ const ArticleInput = () => {
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
   const [imageUrl, setImageUrl] = useState('');
-  let navigate = useNavigate()
+  // let navigate = useNavigate()
 
   const dispatch = useDispatch();
 console.log("im in the article input")
@@ -24,8 +24,8 @@ console.log("im in the article input")
       imageUrl
     };
     console.log("in handle submit", newArticle)
-    let data = await dispatch(addArticleThunk(newArticle));
-    console.log("DATA: ", data)
+    dispatch(addArticleThunk(newArticle));
+
     // if(data.errors) return setErrors(data.errors)
       // DATA:  {id: 11, title: 'test', body: 'test', imageUrl: 'test.png'}
     // navigate(`/articles/${data.id}`)

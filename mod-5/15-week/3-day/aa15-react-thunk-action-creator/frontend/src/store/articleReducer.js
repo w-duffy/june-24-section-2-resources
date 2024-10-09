@@ -1,3 +1,5 @@
+// import articles from "../data/data.json";
+import { createSelector } from "reselect";
 
 //! --------------------------------------------------------------------
 //*                            Action Types
@@ -9,11 +11,10 @@ const ADD_ARTICLE = "article/addArticle";
 //*                           Action Creators
 //! --------------------------------------------------------------------
 
-export const loadArticles = (articles) => {
-  // console.log("Step 6v2: In action creator", articles)
+export const loadArticles = (payload) => {
   return {
-      type: LOAD_ARTICLES,
-      articles,
+    type: LOAD_ARTICLES,
+    payload,
   };
 };
 
@@ -24,28 +25,54 @@ export const addArticle = (payload) => {
   };
 };
 
+//! --------------------------------------------------------------------
+//*                        Normalizing Function
+//! --------------------------------------------------------------------
 
+const normalizer = (array) => {
+  const payload = {};
+
+  array.forEach((el) => {
+    payload[el.id] = el;
+  });
+
+  return payload;
+};
+
+//! --------------------------------------------------------------------
+//*                             Selectors
+//! --------------------------------------------------------------------
+
+// const allArticles= useSelector((state) => state.articleState.entries);
+// const articles = Object.values(allArticles);
+
+
+export const articleSelector = createSelector(
+  (state) => state.articleState.entries,
+  (allArticles) => Object.values(allArticles)
+);
 
 //! --------------------------------------------------------------------
 //?                              Thunks
 //! --------------------------------------------------------------------
 
-export const fetchArticles = () => async dispatch => {
-  // console.log("Step 3 in Thunk")
-  const response = await fetch('/api/articles');
-  const articles = await response.json();
+export const loadArticlesThunk = () => async (dispatch, getState) => {
+  const res = await fetch("/api/articles");
 
-  // console.log("Step 6 ~~BACK IN THUNK~~", articles)
-  dispatch(loadArticles(articles));
-  // {type: , payload}
-  // dispatch({type: LOAD_ARTICLES,  articles});
+  //   console.log("getState():", getState());
+
+  if (res.ok) {
+    const articles = await res.json();
+
+    dispatch(loadArticles(normalizer(articles)));
+    return null;
+  } else {
+    const errors = await res.json();
+    return errors;
+  }
 };
 
-
-
-
 export const addArticleThunk = (articleFormData) => async (dispatch) => {
-  console.log("in add article thunk\n\n", articleFormData)
   const res = await fetch("/api/articles", {
     method: "POST",
     headers: {
@@ -54,31 +81,77 @@ export const addArticleThunk = (articleFormData) => async (dispatch) => {
     body: JSON.stringify(articleFormData),
   });
 
+  // const data = await res.json() //? Write once outside the if else
+
   if (res.ok) {
     const newArticle = await res.json();
-    console.log("in add article thunk after res json", newArticle)
-    dispatch(addArticle(newArticle));
-    // return newArticle;
-    return null
+    dispatch(addArticle(normalizer([newArticle])));
+    return null;
   } else {
     const errors = await res.json();
-    console.log("in thunk error", errors)
     return errors;
   }
 };
 
-const initialState = { entries: [], isLoading: true };
+//! --------------------------------------------------------------------
+//*                              Reducer
+//! --------------------------------------------------------------------
 
+// {
+//     1: {
+//         id: 1,
+//         data: "here"
+//     },
+//     2: {
+//         id: 2,
+//         data: "here"
+//     },
+// }
+
+const initialState = { entries: {}, isLoading: true };
+
+// const articleReducer = (state = initialState, { type, payload }) => {
 const articleReducer = (state = initialState, action) => {
   switch (action.type) {
     case LOAD_ARTICLES:
-      console.log("STEP 7 in reducer")
+      // iterate in here over payload to add to entries
+      // or handle this in the Thunk Action
+    // console.log(state.entries !== newState.entries )
 
-      return { ...state, entries: [...action.articles] };
+      return { ...state, entries: { ...action.payload } };
     case ADD_ARTICLE:
-      return { ...state, entries: [...state.entries, action.payload] }; 
-    default:
+      return { ...state, entries: { ...state.entries, ...action.payload } };
+    // case DELETE_ARTICLE: {
+      // let newState = {...state, entries: {...state.entries}}
+      // let newState = {...state} 
+
+    //   delete newState.entries[action.payload]
+    //   return newState
+
+    // }
+
+      default:
       return state;
   }
 };
+
 export default articleReducer;
+
+//! --------------------------------------------------------------------
+//*                         Basic Catch All Thunk
+//! --------------------------------------------------------------------
+// export const loadArticlesThunk = () => async (dispatch, getState) => {
+//   try {
+//     const res = await fetch("/api/articles/hey/look/at/me");
+
+//     if (res.ok) {
+//       console.log("Things went well");
+//     } else {
+//       console.log("Things did not go so well :(");
+//     }
+//   } catch (e) {
+//     console.log("This was my error", e);
+//   }
+// };
+
+
