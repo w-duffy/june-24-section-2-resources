@@ -11,7 +11,8 @@ const ArticleList = () => {
   const articles = useSelector(state => state.articleState.entries);
 
   useEffect(() => {
-    dispatch(loadArticles());
+    dispatch(loadAritlces());
+    // dispatch(fetchAllArticles());
   }, [dispatch]);
 
 console.log("articles in component Article list:", articles)
