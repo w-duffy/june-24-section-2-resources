@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
-import fruitReducer from './fruitReducer';
 import articleReducer from './articleReducer';
+import fruitReducer from './fruitReducer';
 import thunk from 'redux-thunk'
 /*
 This is the most important part of this file. You will add your reducers here to

@@ -10,6 +10,8 @@ export const loadArticlesThunk = () => async (dispatch) => {
 
 
     dispatch(loadArticles(normalizer(articles)));
+ 
+
     return null;
   } else {
     const errors = await res.json();
@@ -131,6 +133,7 @@ const initialState = { entries: {}, isLoading: true };
 const articleReducer = (state = initialState, action) => {
   switch (action.type) {
     case LOAD_ARTICLES:
+      console.log("In articles reducer")
       // iterate in here over payload to add to entries
       // or handle this in the Thunk Action
     // console.log(state.entries !== newState.entries )
