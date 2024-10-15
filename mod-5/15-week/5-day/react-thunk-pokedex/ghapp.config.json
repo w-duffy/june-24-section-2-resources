@@ -1,0 +1,16 @@
+{
+  "programs": {
+    "BASE": {
+      "starter-exclusions": [
+        "src/utils/validationError.js"
+      ],
+      "program-exclusions": [
+        "README-ch.md",
+        "README-base.md"
+      ]
+    },
+    "CH": true,
+    "FT": true, 
+    "PT": true
+  }
+}
