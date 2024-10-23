@@ -14,12 +14,14 @@ spot = {
 # for review in spot['reviews']:
 #     if review['user'] != 'will' and review['user'] != 'zav':
 #         print("user names !", review['user'])
-        # filtered_reviews.append(review['user'])
+#     filtered_reviews.append(review['user'])
 
 
-filtered_reviews = [review
-                    for review in spot["reviews"]
-                    if review['user'] != 'will' and review['user'] != 'zav']
+filtered_reviews = [
+    review
+    for review in spot["reviews"]
+    if review["user"] != "will" and review["user"] != "zav"
+]
 
 
 print("Filtered rev", filtered_reviews)
