@@ -71,14 +71,14 @@ class WillPrint:
         self.sep = sep
         self.end = end
 
-    def wills_print(self,*printable):
+    def custom_print(self, *printable):
         print(*printable, sep=self.sep, end=self.end)
 
     # def __call__(self, *printable):
     #     print(*printable, sep=self.sep, end=self.end)
 
 
-wprint = WillPrint("\n\n~~~~~~\n\n", "\n\n").wills_print
+wprint = WillPrint("\n\n~~~~~~\n\n", "\n\n").custom_print
 
 some_var = "hi"
 nums = [1,2,3]
@@ -89,40 +89,7 @@ wprint(f"some_var: {some_var}", f"nums: {nums}", f"spot details: {spot}")
 
 # wprint = WillPrint("\n\n~~~~~~\n\n", "\n\n")
 # zprint = WillPrint("\n\n----I love this utility----\n\n", "\n\n")
-# zprint.wills_print("hi", "hello", "world")
+# zprint.custom_print("hi", "hello", "world")
 # print(vars(wprint))
 
-# wprint.wills_print("hi", "hello", "world")
-
-
-
-
-
-
-
-
-
-
-
-    # """
-    # user class
-    # Attributes:
-    #     name (str): name of the user
-    #     age (int): age of the user
-    #     password (str): password of the user
-    # """
-
-
-
-
-# class Human:
-#     def __init__(self, is_human=True):
-#         print("i ran")
-#         self.is_human = True
-
-# class UserMixin:
-#      def get_name(self):
-#          return f"{self.name}"
-
-
-## Decorators
+# wprint.custom_print("hi", "hello", "world")
