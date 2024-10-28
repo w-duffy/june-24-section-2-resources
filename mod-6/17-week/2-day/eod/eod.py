@@ -12,14 +12,16 @@
 ###################################################
 
 # dir_name = input("What do you want your directory to be called?\n")
-# commit_message = input("what do you want your commit to be called?")
+# subprocess.run(f"mkdir {dir_name}", shell=True)
+# subprocess.run("cd test", shell=True)
+# subprocess.run(f"touch ./{dir_name}/test.py", shell=True)
+
+## Basic GH Actions
+# commit_message = input("what do you want your commit message to be?\n")
 # subprocess.run("git init", shell=True)
 # subprocess.run("git add .", shell=True)
 # subprocess.run(f"git commit -m '{commit_message}'", shell=True)
 
-# subprocess.run(f"mkdir {dir_name}", shell=True)
-# subprocess.run("cd test", shell=True)
-# subprocess.run(f"touch ./{dir_name}/test.py", shell=True)
 
 
 ###################################################
@@ -39,10 +41,9 @@ list_of_actions=[
 'git push -u origin main',
 ]
 
-# print('git commit -m "first commit"'[:-15])
+# print('git commit -m '"first commit"'[:-15]) # Slicing off "firstcommit"
 
 # some_string = 'git commit -m "first commit"'
-
 # commit_message = input("Whats your commit message?\n")
 # print(some_string.replace("first commit", commit_message))  ## showing str.replace()
 
