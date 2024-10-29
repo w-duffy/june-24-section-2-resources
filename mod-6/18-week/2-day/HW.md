@@ -6,7 +6,7 @@ Don't focus too hard on the setup instructions from the first few readings
 
 - However, we only ever use them together, so the syntax will be different
 
-The final reading today and the 3 lecture videos showcase the relevant syntax
+The final reading in the HW and the 3 lecture videos showcase the relevant syntax
 
 - This is the syntax you'll be using in your projects and on the assessment!
 
@@ -20,6 +20,6 @@ In our `.env` file, we set our db url to be our local sqlite file
 
 - The filename should match the filename in your application!
 
-```zsh
+```bash
 DATABASE_URL=sqlite:///dev.db
 ```
