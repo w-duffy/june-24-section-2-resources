@@ -1,0 +1,21 @@
+<div class="nav-container">
+    <div class="nav-logo-container">
+      <img class="nav-logo" src="/static/favicon32.png" alt="cat-logo" />
+    <h1 class="nav-title">
+        <a href="/">
+          Pipstagram
+        </a>
+  </h1>
+    </div>
+  <div><a href="{{url_for('posts.all_posts')}}">Feed</a>
+  </div>
+  <div>
+    <a href="{{url_for('posts.create_new_post')}}">New Post</a>
+  </div>
+
+  <div>
+  <a href="/users/1/posts">Pip's Posts</a>
+  <a href="/users/2/posts">Luna's Posts</a>
+  <a href="/users/3/posts">Loki's Posts</a>
+  </div>
+</div>

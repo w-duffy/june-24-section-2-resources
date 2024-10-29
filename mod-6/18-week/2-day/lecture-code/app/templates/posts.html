@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" />
+<link rel="icon" href="{{ url_for('static', filename='favicon32.png') }}" />
+{% extends "base.html" %}
+{% block title %}
+    {% if page_type == "posts" %}
+        All Posts
+    {% elif page_type == "user" %}
+        {{ posts[0].author }}'s Posts
+    {% else %}
+        Post {{ posts[0].id }}
+    {% endif %}
+{% endblock %}
+{% block posts %}
+    <div class="feed-container">
+        {% for post in posts %}
+            <div class="post-container">
+                <div class="post-box">
+                    <div class="post-author">
+                        {% if post.author == "Pip" %}
+                            <h2 style="color: red">{{ post.author }}</h2>
+                        {% elif post.author == "Loki" %}
+                            <h2 style="color: blue">{{ post.author }}</h2>
+                        {% else %}
+                            <h2 style="color: green">{{ post.author }}</h2>
+                        {% endif %}
+                    </div>
+                    <h3>{{ post.date.strftime("%B %-d, %Y at %-I:%M %p") }}</h3>
+                </div>
+                <div>
+                    <a href="/posts/{{ post.id }}">
+                        <img class="post-image" src="{{ post.image }}" />
+                    </a>
+                    <p class="post-text">{{ post.caption }}</p>
+                    <div class="post-operations">
+                        <a href="/posts/{{ post.id }}/delete">Delete Post</a>
+                        <a href="/posts/{{ post.id }}/update">Update Post</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+{% include "footer.html" %}

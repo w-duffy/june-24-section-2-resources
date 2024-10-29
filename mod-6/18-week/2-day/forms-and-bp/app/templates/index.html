@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{%block content%}
+<p>this is html i want to have </p>
+{{message}}
+{%include "new.html"%}
+<p>wrapped around new.html</p>
+
+{%endblock%}
+{%block header%}
+{% if user %}
+<h1>Hello {{user.username}}!</h1>
+{% else %}
+<h1>Hello World!!!!</h1>
+{% endif %}
+{%endblock%}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block posts %}
+{% if id %}
+<form class="post-form" method="post" action="/posts/{{id}}/update">
+  <h2>Update Post {{id}}</h2>
+  {% else %}
+<form class="post-form" method="post" action="/posts/new">
+  <h2>Create New Post</h2>
+{% endif %}
+  {{form.csrf_token}}
+    <p>
+  {{form.errors.author}}
+  {{form.author.label}}{{form.author}}
+    </p>
+    <p>
+
+  {{form.errors.caption}}
+  {{form.caption.label}}{{form.caption}}
+    </p>
+    <p>
+
+  {% for error in form.errors.image %}
+  {{error}}
+  {% endfor %}
+  {{form.image.label}}{{form.image}}
+    </p>
+  {{form.submit}}
+</form>
+  {% endblock %}
