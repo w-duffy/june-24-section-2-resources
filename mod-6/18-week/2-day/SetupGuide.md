@@ -71,6 +71,8 @@ db.init_app(app)
 ```
 
 ## Add Your Models
+
+Example model for Ponies
 ```python
 #/project-name/app/models.py
 from app.db import db
@@ -85,6 +87,7 @@ class Pony(db.Model):
     breed = db.Column(db.String(255))
 ```
 ## Run Migrations
+> ⚠️We'll look at migrations on Thursday; we can use this for now
 
 Add a file to handle migrations
 
