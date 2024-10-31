@@ -8,8 +8,6 @@ likes = db.Table(
                 )
 
 
-
-
 class User(db.Model):
     __tablename__ = "users"
 
@@ -33,34 +31,3 @@ class User(db.Model):
             "name": self.name,
             "Posts": [post.to_dict() for post in self.posts],
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    # posts = db.relationship("Post", back_populates="author")
-    # liked_posts = db.relationship("Post", secondary="likes", back_populates="user_likes")
-
-    # def to_dict(self):
-    #     return {
-    #         "id": self.id,
-    #         "name": self.name
-    #     }
-
-    # def to_dict_with_posts(self):
-    #     return {
-    #         "id": self.id,
-    #         "name": self.name,
-    #         "posts": [post.to_dict_basic() for post in self.posts]
-    #     }
