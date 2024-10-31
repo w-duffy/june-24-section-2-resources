@@ -72,22 +72,11 @@ def delete_user(id):
 
 
 
-#
+# Eager vs Lazy 
 @app.route("/loading")
 def testing():
     users = User.query.all()
+    # # https://docs.sqlalchemy.org/en/14/orm/loading_relationships.html#sqlalchemy.orm.joinedload
     # users = User.query.options(joinedload(User.posts)).all()
     print("\n ~~~~~~~~~~~~~~ \n")
     return [user.to_dict_with_posts() for user in users]
-
-
-
-
-
-
-
-
-
-
-    # # https://docs.sqlalchemy.org/en/14/orm/loading_relationships.html#sqlalchemy.orm.joinedload
-    # users = User.query.options(joinedload(User.posts)).all()

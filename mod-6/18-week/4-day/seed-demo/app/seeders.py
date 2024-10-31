@@ -19,7 +19,7 @@ def random_date_2023():
 
 seed_command = AppGroup("seed")
 
-# @seed_command.add_command('undo')
+# @seed_command.add_command('undo') # doesn't have the app context
 # def undo_all():
 #     pass
 
@@ -119,7 +119,9 @@ def seed_users():
         user_3 = User.query.get(3)
         current_post.author = user_3
         db.session.add(current_post)
+
     comment = Comment(body="hi", user_id=1, post_id=1)
+
     db.session.add(comment)
     db.session.commit()
 
