@@ -3,6 +3,8 @@ from datetime import datetime, timedelta
 from random import randint
 from flask.cli import AppGroup
 # from app import app
+from sqlalchemy.sql import text
+
 from app.models import db, Post, User, Comment
 # load_dotenv()
 
@@ -127,4 +129,8 @@ def seed_users():
 
 @seed_command.command('undo')
 def undo_all():
-    db.drop_all()
+    # db.drop_all() # this drops the tables entirely
+    db.session.execute(text("DELETE FROM likes"))
+    db.session.execute(text("DELETE FROM comments"))
+    db.session.execute(text("DELETE FROM posts"))
+    db.session.execute(text("DELETE FROM users"))
