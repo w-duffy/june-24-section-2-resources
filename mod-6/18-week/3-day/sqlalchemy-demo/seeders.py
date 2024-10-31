@@ -4,7 +4,7 @@ from random import randint
 
 load_dotenv()
 from app import app
-from app.models import db, likes, Post, User
+from app.models import db, likes, Post, User, Comment
 
 def random_date_2023():
     """Generate a random created_attime between start and end which
@@ -113,5 +113,7 @@ with app.app_context():
         user_3 = User.query.get(3)
         current_post.author = user_3
         db.session.add(current_post)
-
+        
+    comment = Comment(body="Buzzer beater!", user_id=1, post_id=1)
+    db.session.add(comment)
     db.session.commit()
