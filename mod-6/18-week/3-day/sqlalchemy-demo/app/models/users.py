@@ -16,6 +16,7 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(255), nullable=False, unique=True)
     posts = db.relationship("Post", back_populates="author")
+    comments = db.relationship("Comment", back_populates="creator")
     # posts = db.relationship("Post", back_populates="author", lazy="joined") # Eager loads the user's posts anytime you query for users; better to eagerly load on a per route basis
     liked_posts = db.relationship("Post", secondary="likes", back_populates="user_likes")
 
