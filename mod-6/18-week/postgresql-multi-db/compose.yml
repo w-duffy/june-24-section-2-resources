@@ -1,0 +1,21 @@
+## We'll cover this next week, but incase you want to try it out now
+## Add psycopg2-binary to your requirements.txt
+
+
+# In the root of your project, create a file called compose.yml or docker-compose.yaml
+# Paste in the following code:
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+
+# Run the following command to start the database:
+# docker-compose up -d
+
+# Stop the database with the following command:
+# docker-compose down
