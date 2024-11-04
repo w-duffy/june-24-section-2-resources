@@ -19,12 +19,6 @@ Your post should include the following information:
 - What error message(s) are you getting? Check for errors in both the front-end and back-end consoles, and include screenshots of those errors.
 - What have you tried so far? This should be specific—don't just say "I added console.log statements and googled the error" try to communicate what you've learned so far through your debugging process. For example, you could say "When I look in the network tab it looks like my request body has all the necessary form data in it, but when I print the `form.data` object on the backend, it says that the username is `None`".
 
-
-
-
-
-
-
 ### General questions
 Not all questions are related to a specific error or feature. Don't feel like you can only ask questions once you're already getting an error.
 
