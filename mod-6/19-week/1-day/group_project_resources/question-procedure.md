@@ -28,6 +28,6 @@ Your post should include the following information:
 ### General questions
 Not all questions are related to a specific error or feature. Don't feel like you can only ask questions once you're already getting an error.
 
-If you've already chatted with your teammates, and checked the documentation, but you still have conceptual questions/want to chat about possible approaches to a feature that you have not implemented yet, then you are welcome to put questions like that in the slack channel as well.
+If you've already chatted with your teammates, and checked the documentation, but you still have conceptual questions/want to chat about possible approaches to a feature that you have not implemented yet, then you are welcome to put questions like that in the Discord channel as well.
 
 Just take the time to figure out what you are asking, and ask it as specifically as you can.
