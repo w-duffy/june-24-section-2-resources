@@ -4,7 +4,7 @@ We will have time allotted each day this week to work on group project planning!
 
 ## **_You will be required to have 4 features for this project, 2 full CRUD and 2 partial CRUD_**
 
-You must produce 3 design documents for approval by your project advisor this week.  All of these docs should be added to your project's wiki on GitHub, and be reviewed by your Instructor there.
+You must produce 3 design documents for approval by your instructor this week.  All of these docs should be added to your project's wiki on GitHub, and will be reviewed by your instructor there.
 
 - Feature list
 - User stories
