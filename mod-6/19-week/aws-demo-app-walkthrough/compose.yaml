@@ -11,9 +11,12 @@ services:
   server:
     build:
       context: .
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile.prod
+    command: "flask run --host=0.0.0.0 --port=8000"
     ports:
       - 8000:8000
+    environment:
+      - FLASK_DEBUG=1
     env_file:
       - .env
     depends_on:
@@ -23,8 +26,8 @@ services:
       watch:
         - path: requirements.txt
           action: rebuild
-        - path: ./app/
-          target: /var/www/app
+        - path: ./backend/
+          target: /var/www/backend/
           action: sync
 
 # The commented out section below is an example of how to define a PostgreSQL

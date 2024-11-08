@@ -25,6 +25,9 @@ def get_actor(actor_name):
         "actor": actor.to_dict(),
         "movies": [movie.to_dict() for movie in actor.movies],
     }
+@app.route("/api/hello")
+def hello():
+    return {"hello": "worl"}, 418
 
 @app.route("/api/images")
 def all_images():

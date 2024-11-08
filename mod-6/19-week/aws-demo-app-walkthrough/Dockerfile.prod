@@ -11,12 +11,6 @@ WORKDIR /myapp
 ADD ./frontend/package.json ./frontend/package-lock.json ./
 RUN npm install --include=dev
 
-FROM frontend-base AS production-deps
-WORKDIR /myapp
-COPY --from=frontend-deps /myapp/node_modules /myapp/node_modules
-COPY ./frontend/package.json ./frontend/package-lock.json ./
-RUN npm prune --omit=dev
-
 FROM frontend-base AS frontend-build
 WORKDIR /myapp
 COPY --from=frontend-deps /myapp/node_modules /myapp/node_modules
