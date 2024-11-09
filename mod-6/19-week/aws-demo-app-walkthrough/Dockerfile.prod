@@ -1,20 +1,20 @@
 # Use a prebuilt image from Docker Hub to deploy.
-
 # docker build --pull --rm -f "Dockerfile.prod" -t your-dockerhub-username/deploy-to-render:latest "."
 # docker push your-dockerhub-username/deploy-to-render:latest
 
 FROM node:20-bookworm-slim AS frontend-base
 ENV NODE_ENV=production
+WORKDIR /myapp
 
 FROM frontend-base AS frontend-deps
-WORKDIR /myapp
 ADD ./frontend/package.json ./frontend/package-lock.json ./
 RUN npm install --include=dev
 
-FROM frontend-base AS frontend-build
-WORKDIR /myapp
-COPY --from=frontend-deps /myapp/node_modules /myapp/node_modules
+FROM frontend-deps AS dev
 COPY ./frontend ./
+
+FROM dev AS frontend-build
+# COPY --from=frontend-deps /myapp/node_modules /myapp/node_modules
 RUN npm run build
 
 FROM python:3.12-alpine3.20 AS base
@@ -29,7 +29,7 @@ ENV UV_SYSTEM_PYTHON=1
 COPY requirements.txt .
 RUN uv pip install --system --no-cache-dir -r requirements.txt psycopg2
 
-FROM base
+FROM base AS backend-dev
 WORKDIR /var/www
 COPY --from=py-dependencies-builder /usr/local /usr/local
 COPY docker-entrypoint.sh ./docker-entrypoint.sh
@@ -38,6 +38,8 @@ RUN chmod +x ./docker-entrypoint.sh && \
 USER myuser
 COPY ./migrations ./migrations
 COPY ./backend ./backend
-COPY --from=frontend-build /myapp/dist ./frontend/dist
 ENTRYPOINT ["./docker-entrypoint.sh"]
+
+FROM backend-dev AS prod
+COPY --from=frontend-build /myapp/dist ./frontend/dist
 CMD ["gunicorn", "backend:app"]

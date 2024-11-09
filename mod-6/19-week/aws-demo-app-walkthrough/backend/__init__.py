@@ -1,5 +1,5 @@
 import os
-from flask import Flask, request
+from flask import Flask, redirect, request
 from flask_cors import CORS
 from flask_migrate import Migrate
 from flask_wtf.csrf import generate_csrf
@@ -27,7 +27,7 @@ def get_actor(actor_name):
     }
 @app.route("/api/hello")
 def hello():
-    return {"hello": "worl"}, 418
+    return {"hello": "world"}, 418
 
 @app.route("/api/images")
 def all_images():
@@ -61,6 +61,13 @@ def get_image(image_id):
         return {"message": "no image"}, 400
     return {"image": image.to_dict()}
 
+@app.before_request
+def https_redirect():
+    if os.environ.get('FLASK_ENV') == 'production':
+        if request.headers.get('X-Forwarded-Proto') == 'http':
+            url = request.url.replace('http://', 'https://', 1)
+            code = 301
+            return redirect(url, code=code)
 
 @app.after_request
 def inject_csrf_token(response):

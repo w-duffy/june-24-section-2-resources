@@ -17,7 +17,9 @@ function Layout() {
   return (
     <>
       <nav>
-        <NavLink to="/">Home</NavLink>
+      <NavLink to="/" className={({ isActive }) => isActive ? 'active' : ''}>
+          Home
+        </NavLink>
       </nav>
       <HomePage />
       <Outlet />
@@ -172,6 +174,7 @@ function ErrorBoundary() {
     <div>
       <h1>Something goofed</h1>
       <p>{error.statusText || error.message}</p>
+      <Link to="/">Go back Home</Link>
     </div>
   );
 }
