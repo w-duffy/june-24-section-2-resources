@@ -1,4 +1,5 @@
 services:
+
   server:
     build:
       context: .
@@ -22,6 +23,7 @@ services:
         - path: ./backend/
           target: /var/www/backend/
           action: sync
+
   frontend:
     build:
       context: .
@@ -33,13 +35,14 @@ services:
       - 5173:5173
     volumes:
       - ./frontend:/myapp
-      - /myapp/node_modules
+      - notused:/myapp/node_modules
     environment:
       - NODE_ENV=development
     depends_on:
       server:
         condition: service_started
     command: npm run dev
+
   db:
     image: postgres:16-alpine
     restart: always
@@ -55,12 +58,14 @@ services:
       - 5432
     healthcheck:
       test: [ "CMD", "pg_isready" ]
-      interval: 5s
+      interval: 1s
       timeout: 5s
       retries: 5
 
 volumes:
   db-data:
+  notused:
+
 secrets:
   db-password:
     file: db/password.txt
