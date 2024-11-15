@@ -8,6 +8,16 @@ In the case of adding the Dockerfile to our repo and selecting "Docker" as "Lang
 
 ![Render GUI V Docker](image.png)
 
-## What's the point
+## How can this be improved?
 
+- Use a lighter base image
 
+- Optimize the order the instructions so that we utilize Docker's caching mechanisms
+
+- Only copy necessary code into the final image
+
+- Deploy using a prebuilt image from a container image registery such as Docker Hub
+
+- Add CI/CD pipelines, like GH Actions, to automatically to build, test, push our image to a registery, and trigger a deployment
+
+- And more!!
