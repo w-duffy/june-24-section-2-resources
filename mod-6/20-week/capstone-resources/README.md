@@ -86,7 +86,7 @@ Students **MUST** have their cameras on during live lectures and anytime they're
 # Phase 1 - Project Approval
 
 ## Capstone Project Proposals
-You must submit a Project proposal and get approval from an Instructor before implementing the features. The deadline for all project proposals will have to be submitted by the **end of day** on W41D4.
+You must submit a Project proposal and get approval from an Instructor before implementing the features. The deadline for all project proposals will have to be submitted by the **end of day** on Wednesday 11/20/24.
 
 If you're currently waiting for an Instructor to review your project proposal, please utilize the time appropriately and continue to be productive *(initialize your project + deploy skeleton starter, set up your GitHub repo, project kanban board, etc.)*.
 
@@ -94,7 +94,7 @@ Your Instructor will review your GitHub repo wiki documents based on the submiss
 
 *Note- Any project proposal without all the required wiki documentation will be disapproved and asked to complete.*
 
-Instructor's will have open office hours during the **Project Approval Phase** to help provide guidance on project proposals.
+Questions should be asked in the questions channel during the **Project Approval Phase**.
 
 ---
 ## The Purpose of User Stories
