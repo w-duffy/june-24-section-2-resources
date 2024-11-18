@@ -24,7 +24,7 @@ The first feature has to be **full** CRUD. and the second feature can be **3/4**
 A User should **NOT** be allowed to update or submit a form with blank or null input fields that are assumed to be required. All input fields within a form are assumed to be required and tested as such. If certain fields within a form are not required, then all required fields must be marked by a different CSS style or an asterisk (*) next to the label to indicate a required field.
 
 Please refer to the Error Validations Repo for more examples.
-[Required Error Messages](https://github.com/whitnessme/capstone-minimum-required-error-messages)
+[Error Message Examples](https://github.com/whitnessme/capstone-minimum-required-error-messages)
 
 ### Prepopulating Data For the Update Form
 When a User goes to Edit/Update a resource, the edit form must be prepopulated with the previous data. Using the "placeholder" attribute will **not** be accepted by itself. You must be able to dynamically update the value of the input field. This will create a smoother UX for recruiters to look at.
