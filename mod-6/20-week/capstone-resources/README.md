@@ -39,7 +39,7 @@ Remember, a minimum viable product (MVP) is the absolute least you can put out t
 
 We want to make sure we are completing ONE FEATURE before moving on to the next. This feature-driven approach can be seen as an **agile** workflow, whereas the **waterfall** approach can be seen as completing one phase at a time before moving on to the next phase. Agile is an iterative approach where we deliver goals in small incremental amounts. An example of a waterfall workflow would be working on the entire backend first for all features then working on the frontend.
 
-[Agile vs Waterfall Link](https://www.ibm.com/cloud/blog/agile-vs-waterfall)
+[Agile vs Waterfall Link](https://www.atlassian.com/agile/project-management/project-management-intro)
 
 Students should have a clear road map during the planning phase of what should be the MVPs for their capstone project.
 
