@@ -172,7 +172,7 @@ The eyeballs mean the Instructor is aware of the question is are looking into it
 # ✅
 The green check means that an Instructor or the student has confirmed that the question has been resolved. If this isn't correct, tag the Instructor in the thread or re-post the question.
 
-# ☑️
+# 🔃
 The gray or blue check means the question seems to have been resolved by an Instructor or other student but is awaiting some form of confirmation.
 
 # ⚠️ or ❌
