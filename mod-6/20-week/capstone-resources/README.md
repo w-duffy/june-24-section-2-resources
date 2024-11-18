@@ -65,7 +65,7 @@ Taking care of our mental health is an important aspect of our life. Please make
 Students plagiarising another student's source code will be dismissed. This is an assessment to utilize the knowledge gained from the previous modules to build what you have learned.
 
 ## Camera Etiquacy
-Students **MUST** have their cameras on during live lectures and anytime they're interacting with staff or students in Module 7, including during the Career Quest. Students who have their cameras off, are AFK/not present, or do not show their full face in the camera view, will receive a **strike**.
+Students **MUST** have their cameras on anytime they're interacting with staff or students in Module 7, including during the Career Quest. Students who have their cameras off, are AFK/not present, or do not show their full face in the camera view, will receive a **strike**.
 
 ## Some Useful Development Links
 
@@ -241,7 +241,7 @@ After receiving your Feature Review, your priority should be fixing any bugs lis
 ## Final Grade
 Upon final grading, you should see two tabs at the bottom of the scorecard Google spreadsheet labeled as **"Feature Review"** and **"Capstone"**. Your capstone project final grade will be in the "Capstone" tab. Students will transition to the AI curriculum and project time, and your Instructor will begin final grading student's projects during this time. Please try to avoid watching your Instructor live grade, your priority will be to focus on any work given by your instructor. Once all projects have been graded, the staff will announce it in the Discord General channel.
 
-*The last time to deploy any changes to your Render application will be at 8 AM PT / 11 AM EST on Friday of the second week of Capstone. Any changes made during final grading will be **considered cheating and handled appropriately**.*
+*The last time to deploy any changes to your Render application will be at 8 AM PT / 11 AM EST on Monday after the second week of Capstone. Any changes made during final grading will be **considered cheating and handled appropriately**.*
 
 Under the Capstone tab, students will see the status of their project, either as "pass", "fail", or "currently grading". Any capstone project marked as "fail" will take an academic deferral. Please do not view it as a negative outcome but as an opportunity to extend your learning to gain more mastery, which is imperative in the job search.
 
