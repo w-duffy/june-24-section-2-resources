@@ -6,7 +6,7 @@ This project includes instructions for setting up an S3 bucket via the AWS conso
 
 Follow this guide to create a bucket:
 
-- [Guide: Create an S3 Bucket](https://scribehow.com/shared/Create_an_S3_Bucket_and_User_in_AWS__aJhJzta9TZWQyfKvXQd6gQ)
+- [Guide: Create an S3 Bucket](https://scribehow.com/shared/Create_an_S3_Bucket_in_AWS__aJhJzta9TZWQyfKvXQd6gQ)
 
 ## Step 2: Implement Backend and Frontend Code
 
