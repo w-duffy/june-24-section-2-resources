@@ -41,7 +41,7 @@ export const imageReducer = (state = {}, action) => {
   };
 
   // memoized selector; you _could_ just use useSelector; showing another way.
- export  const createImageSelector = createSelector(
+ export const selectImages = createSelector(
     (state) => state.images || {},
     (images) => Object.values(images)
   );

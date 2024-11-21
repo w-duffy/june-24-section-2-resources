@@ -2,12 +2,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { useLoaderData } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Image } from "@unpic/react";
-import { createImageSelector, createImage, getAllImages } from "../redux/aws";
+import { selectImages, createImage, getAllImages } from "../redux/aws";
 
 const AllImagesLandingPage = () => {
   const dispatch = useDispatch();
   // const images = useSelector((state) => state.images);
-  const images = useSelector(createImageSelector);
+  const images = useSelector(selectImages);
 
   useEffect(() => {
     dispatch(getAllImages());
