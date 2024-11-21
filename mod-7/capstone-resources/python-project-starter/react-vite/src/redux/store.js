@@ -6,9 +6,7 @@ import {
 } from "redux";
 import thunk from "redux-thunk";
 import sessionReducer from "./session";
-import { imageReducer } from "../router";
-
-
+import { imageReducer } from "./aws";
 
 const rootReducer = combineReducers({
   session: sessionReducer,
