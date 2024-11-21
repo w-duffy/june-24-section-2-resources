@@ -5,8 +5,8 @@ const bcrypt = require('bcryptjs');
 
 
 let options = {};
-options.tableName = 'Users';
 
+// options.tableName = 'Users';
 if(process.env.NODE_ENV === 'production'){
   options.schema = process.env.SCHEMA;
 }
