@@ -24,22 +24,3 @@ Implement the code for the backend and frontend to use the bucket.  Here's an ex
 **Environment:**
 
 * `.env.example`
-
-
-
-Follow this gudie to create a bucket:
--
-
-## Step-2
-
-Implement the code for the backend and frontend to use the bucket.  Here is an example of the implementation:
-
-Frontend:
-react-vite/src/redux/aws.js
-react-vite/src/components/AWS.jsx
-
-Backend:
-app/__init__.py
-
-Env:
-.env.example
