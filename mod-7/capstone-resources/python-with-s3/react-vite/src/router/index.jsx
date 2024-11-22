@@ -5,6 +5,8 @@ import LoginFormPage from "../components/LoginFormPage";
 import SignupFormPage from "../components/SignupFormPage";
 import Layout from "./Layout";
 import AWS, {Images} from "../components/AWS";
+import ImageDetail from "../components/ImageDetail";
+
 
 export const router = createBrowserRouter([
   {
@@ -13,6 +15,10 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <AWS />,
+      },
+      {
+        path: "image/:id",
+        element: <ImageDetail />
       },
       {
         path: "login",
