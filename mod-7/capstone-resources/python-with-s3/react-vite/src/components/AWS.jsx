@@ -4,6 +4,21 @@ import { useEffect, useState } from "react";
 import { Image } from "@unpic/react";
 import { selectImages, createImage, getAllImages } from "../redux/aws";
 
+function ImageCard({image}){
+return (
+  <picture>
+  <Image
+    width={500}
+    height={300}
+    background="auto"
+    src={image.image}
+    alt={`Image ${image.id}`}
+    loading="lazy"
+  />
+</picture>
+)
+}
+
 const AllImagesLandingPage = () => {
   const dispatch = useDispatch();
   // const images = useSelector((state) => state.images);
@@ -19,18 +34,8 @@ const AllImagesLandingPage = () => {
     <section>
       <h2>Image Gallery</h2>
       {images.map((image) => (
-        <picture key={image.id}>
-          <Image
-            width={500}
-            height={300}
-            background="auto"
-            src={image.image}
-            alt={`Image ${image.id}`}
-            loading="lazy"
-          />
-        </picture>
+        <ImageCard key={image.id} image={image} />
       ))}
-      ;
     </section>
   );
 };
