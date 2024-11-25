@@ -7,7 +7,6 @@ import Layout from "./Layout";
 import AWS, {Images} from "../components/AWS";
 import ImageDetail from "../components/ImageDetail";
 
-
 export const router = createBrowserRouter([
   {
     element: <Layout />,

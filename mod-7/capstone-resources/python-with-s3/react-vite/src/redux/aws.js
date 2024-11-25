@@ -1,5 +1,38 @@
 import { createSelector } from "reselect";
 
+export const getImageById = (id) => async (dispatch) => {
+  const res = await fetch(`/api/images/${id}`);
+  if (res.ok) {
+    const resPost = await res.json();
+    dispatch({ type: "images/add", payload: resPost });
+  } else {
+    dispatch({ type: "error/add", payload: "No image found" });
+  }
+};
+
+export const imageLoadingReducer = (state = false, action) => {
+  switch (action.type) {
+    case "images/uploading":
+      return true;
+    case "images/add":
+      return false;
+    default:
+      return state;
+  }
+};
+
+export const imageErrorReducer = (state = {message: null}, action) => {
+  switch (action.type) {
+    case "error/add":
+      return {message: action.payload};
+    case "error/cleanup":
+        return {message: null};
+    default:
+      return state;
+  }
+};
+
+
 export const imageReducer = (state = {}, action) => {
     switch (action.type) {
       case "images/add":
@@ -16,6 +49,7 @@ export const imageReducer = (state = {}, action) => {
 
   // Thunk
    export const createImage = (post) => async (dispatch) => {
+    dispatch({type: "images/uploading"});
     const res = await fetch(`/api/images`, {
       method: "POST",
       body: post,
@@ -23,9 +57,8 @@ export const imageReducer = (state = {}, action) => {
     if (res.ok) {
       const resPost = await res.json();
       dispatch({ type: "images/add", payload: resPost });
-      console.log("Your post has been created!", resPost);
     } else {
-      console.log("There was an error making your post!");
+      console.log("There was an error adding the image");
     }
   };
 
@@ -42,6 +75,6 @@ export const imageReducer = (state = {}, action) => {
 
   // memoized selector; you _could_ just use useSelector; showing another way.
  export const selectImages = createSelector(
-    (state) => state.images || {},
+    [(state) => state.images.allImages || {}],
     (images) => Object.values(images)
   );

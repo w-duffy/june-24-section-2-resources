@@ -134,6 +134,14 @@ def upload_image():
 
     return {"errors": form.errors}
 
+# Get image by id
+@app.route("/api/images/<int:image_id>")
+def get_image(image_id):
+    image = Image.query.get(image_id)
+    if image is None:
+        return {"message": "no image"}, 404
+    return {"image": image.to_dict()}
+
 # Since we are deploying with Docker and Flask,
 # we won't be using a buildpack when we deploy to Heroku.
 # Therefore, we need to make sure that in production any
